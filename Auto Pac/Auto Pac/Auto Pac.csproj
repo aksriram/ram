@@ -1,0 +1,890 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8222CE39-5368-4338-8442-9E4832E8F2FB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Auto_Pac</RootNamespace>
+    <AssemblyName>Auto Pac</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\..\WCF\September 2016\solution updated\ISMSWebApplication_6-9-16\ISMSWebApplication\ISMSWebApplication\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AutoPac\Account_Adjustment.aspx" />
+    <Content Include="AutoPac\Account_Code_Creation.aspx" />
+    <Content Include="AutoPac\Admin_Users_Management.aspx" />
+    <Content Include="AutoPac\Amend_Cheque_Purpose.aspx" />
+    <Content Include="AutoPac\Car_Allocation.aspx" />
+    <Content Include="AutoPac\Car_Registration.aspx" />
+    <Content Include="AutoPac\Cash_Deposit_Listing.aspx" />
+    <Content Include="AutoPac\Cheque_Deposit_Listing.aspx" />
+    <Content Include="AutoPac\Cheque_Enquiry.aspx" />
+    <Content Include="AutoPac\Cheque_Issue.aspx" />
+    <Content Include="AutoPac\COE_Allocation.aspx" />
+    <Content Include="AutoPac\COE_Bidding_Preparation.aspx" />
+    <Content Include="AutoPac\COE_Bidding_Results.aspx" />
+    <Content Include="AutoPac\COE_Bid_Staff.aspx" />
+    <Content Include="AutoPac\COE_Transfer.aspx" />
+    <Content Include="AutoPac\Contract_Management.aspx" />
+    <Content Include="AutoPac\Customer_Enquiry.aspx" />
+    <Content Include="AutoPac\Duty_Pullout_List%28Taxi%29.aspx" />
+    <Content Include="AutoPac\Duty_Pullout_List.aspx" />
+    <Content Include="AutoPac\ETA_Date_Updation.aspx" />
+    <Content Include="AutoPac\Export_HMC.aspx" />
+    <Content Include="AutoPac\Export_To_HMC%28New%29.aspx" />
+    <Content Include="AutoPac\Finance_Vehicle_Receipt.aspx" />
+    <Content Include="AutoPac\FOB_Invoice_Price.aspx" />
+    <Content Include="AutoPac\General_Enquiry.aspx" />
+    <Content Include="AutoPac\GIRO_Payment.aspx" />
+    <Content Include="AutoPac\GST_Calculation.aspx" />
+    <Content Include="AutoPac\Hire_Purchase.aspx" />
+    <Content Include="AutoPac\Home_Page.aspx" />
+    <Content Include="AutoPac\Invoice.aspx" />
+    <Content Include="AutoPac\Location_Master.aspx" />
+    <Content Include="AutoPac\Monthly_Commission.aspx" />
+    <Content Include="AutoPac\One_Motoring_COE_Bidding.aspx" />
+    <Content Include="AutoPac\Open_Category_COE.aspx" />
+    <Content Include="AutoPac\PARF_Transfer_Date.aspx" />
+    <Content Include="AutoPac\Payment_List.aspx" />
+    <Content Include="AutoPac\Payment_Status.aspx" />
+    <Content Include="AutoPac\Receipt.aspx" />
+    <Content Include="AutoPac\Salesman_Receipt.aspx" />
+    <Content Include="AutoPac\Service_Enquiry.aspx" />
+    <Content Include="AutoPac\Stock Hold.aspx" />
+    <Content Include="AutoPac\Taxi_Registration.aspx" />
+    <Content Include="AutoPac\Update_Vehicle_Rate.aspx" />
+    <Content Include="AutoPac\User_Rights_Management.aspx" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\custom.css" />
+    <Content Include="images\bg - Copy.jpg" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="images\komocogrouplogo.jpg" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\logo2.jpg" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery1.10.2.js" />
+    <Content Include="LoginPage.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MainMaster.master" />
+    <Content Include="Resources\aimages\Add_New_Giro.png" />
+    <Content Include="Resources\aimages\Add_New_Receipt.png" />
+    <Content Include="Resources\aimages\Allocate.png" />
+    <Content Include="Resources\aimages\AllocateAll.png" />
+    <Content Include="Resources\aimages\Allocate_All.png" />
+    <Content Include="Resources\aimages\BSingeAllocation.png" />
+    <Content Include="Resources\aimages\Buyer_Receipt.png" />
+    <Content Include="Resources\aimages\B_Add_New.png" />
+    <Content Include="Resources\aimages\B_Add_New_Cheque.png" />
+    <Content Include="Resources\aimages\B_Andp.png" />
+    <Content Include="Resources\aimages\B_ANDPR.png" />
+    <Content Include="Resources\aimages\B_Calendr.png" />
+    <Content Include="Resources\aimages\B_Cancel_Cheque.png" />
+    <Content Include="Resources\aimages\B_CD.png" />
+    <Content Include="Resources\aimages\B_Clear.png" />
+    <Content Include="Resources\aimages\B_DBS_Cheque_Express.png" />
+    <Content Include="Resources\aimages\B_DBS_Maybank_Cheque.png" />
+    <Content Include="Resources\aimages\B_Delete.png" />
+    <Content Include="Resources\aimages\B_ER_C.png" />
+    <Content Include="Resources\aimages\B_ER_P.png" />
+    <Content Include="Resources\aimages\B_Export.png" />
+    <Content Include="Resources\aimages\B_Import.png" />
+    <Content Include="Resources\aimages\B_Maybank_Cheque_Without_Contract.png" />
+    <Content Include="Resources\aimages\B_New.png" />
+    <Content Include="Resources\aimages\B_Next.png" />
+    <Content Include="Resources\aimages\B_ok.png" />
+    <Content Include="Resources\aimages\B_PARTIFB.png" />
+    <Content Include="Resources\aimages\B_PARTIFS.png" />
+    <Content Include="Resources\aimages\B_PBI.png" />
+    <Content Include="Resources\aimages\B_PCM.png" />
+    <Content Include="Resources\aimages\B_PD.png" />
+    <Content Include="Resources\aimages\B_PDN.png" />
+    <Content Include="Resources\aimages\B_PFR.png" />
+    <Content Include="Resources\aimages\B_PI.png" />
+    <Content Include="Resources\aimages\B_Prev.png" />
+    <Content Include="Resources\aimages\B_Pring_Cheque.png" />
+    <Content Include="Resources\aimages\B_Print_Payment.png" />
+    <Content Include="Resources\aimages\B_PS.png" />
+    <Content Include="Resources\aimages\B_PSfB.png" />
+    <Content Include="Resources\aimages\B_PSI.png" />
+    <Content Include="Resources\aimages\B_R.png" />
+    <Content Include="Resources\aimages\B_Register.png" />
+    <Content Include="Resources\aimages\B_S.png" />
+    <Content Include="Resources\aimages\B_Save.png" />
+    <Content Include="Resources\aimages\B_Save1.png" />
+    <Content Include="Resources\aimages\B_Update_Cheque.png" />
+    <Content Include="Resources\aimages\B_Upload.png" />
+    <Content Include="Resources\aimages\Cancel_Contract.png" />
+    <Content Include="Resources\aimages\Cancel_Giro.png" />
+    <Content Include="Resources\aimages\Deposit_Receipt.png" />
+    <Content Include="Resources\aimages\Drop_Allocation.png" />
+    <Content Include="Resources\aimages\Export.png" />
+    <Content Include="Resources\aimages\Export_to_Excel.png" />
+    <Content Include="Resources\aimages\Full_Docs_Submit.png" />
+    <Content Include="Resources\aimages\Generate_Contract.png" />
+    <Content Include="Resources\aimages\Invoice.png" />
+    <Content Include="Resources\aimages\Load_Details_of_SC.png" />
+    <Content Include="Resources\aimages\MoveR.png" />
+    <Content Include="Resources\aimages\New_Receipt.png" />
+    <Content Include="Resources\aimages\PAL.png" />
+    <Content Include="Resources\aimages\PNAL.png" />
+    <Content Include="Resources\aimages\Print_Buyer_Order.png" />
+    <Content Include="Resources\aimages\Print_Details_of_SC.png" />
+    <Content Include="Resources\aimages\Print_Giro.png" />
+    <Content Include="Resources\aimages\Print_PARF_Settlement.png" />
+    <Content Include="Resources\aimages\Print_Payment_Status.png" />
+    <Content Include="Resources\aimages\Print_Slip.png" />
+    <Content Include="Resources\aimages\save_allocate.png" />
+    <Content Include="Resources\aimages\search.png" />
+    <Content Include="Resources\aimages\Show_List.png" />
+    <Content Include="Resources\aimages\Show_Receipt.png" />
+    <Content Include="Resources\aimages\Single_Allocation.png" />
+    <Content Include="Resources\aimages\Supercede_Contract.png" />
+    <Content Include="Resources\aimages\Thank_You_Letter.png" />
+    <Content Include="Resources\aimages\To_Invoice.png" />
+    <Content Include="Resources\aimages\T_Balance_of_Payment.png" />
+    <Content Include="Resources\aimages\T_Buyer_Account.png" />
+    <Content Include="Resources\aimages\T_Consutlant_Account.png" />
+    <Content Include="Resources\aimages\T_Komoco_Account.png" />
+    <Content Include="Resources\aimages\T_Others.png" />
+    <Content Include="Resources\aimages\Update_Contract.png" />
+    <Content Include="Resources\aimages\Update_Giro.png" />
+    <Content Include="Resources\css\bootstrap-material-datetimepicker.css" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="js\.DS_Store" />
+    <None Include="Properties\PublishProfiles\webhost.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="js\jquery-1.3.2.min.js" />
+    <Content Include="js\jquery-ui-1.7.custom.min.js" />
+    <Content Include="Resources\css\bootstrap.css" />
+    <Content Include="Resources\css\bootstrap.min.css" />
+    <Content Include="Resources\css\custom.css" />
+    <Content Include="Resources\images\AddAdmin.png" />
+    <Content Include="Resources\images\AddCoe.png" />
+    <Content Include="Resources\images\AddDeposit.png" />
+    <Content Include="Resources\images\AddInstal.png" />
+    <Content Include="Resources\images\AddInsu.png" />
+    <Content Include="Resources\images\attlogo.png" />
+    <Content Include="Resources\images\B Group Tree.png" />
+    <Content Include="Resources\images\BERC.png" />
+    <Content Include="Resources\images\BERP.png" />
+    <Content Include="Resources\images\BNSP.png" />
+    <Content Include="Resources\aimages\Browse.png" />
+    <Content Include="Resources\images\BSH.png" />
+    <Content Include="Resources\images\BSubmit.png" />
+    <Content Include="Resources\images\BUS.png" />
+    <Content Include="Resources\images\B_BO.png" />
+    <Content Include="Resources\images\B_EnQuiry.png" />
+    <Content Include="Resources\images\B_Export.png" />
+    <Content Include="Resources\images\B_Nego.png" />
+    <Content Include="Resources\images\B_Save _Print.png" />
+    <Content Include="Resources\images\bg - Copy.jpg" />
+    <Content Include="Resources\images\bg.jpg" />
+    <Content Include="Resources\images\BPrintRequest.png" />
+    <Content Include="Resources\images\BUploadDocument.png" />
+    <Content Include="Resources\images\Buyer_Order.png" />
+    <Content Include="Resources\images\B_Add.png" />
+    <Content Include="Resources\images\B_Calendr.png" />
+    <Content Include="Resources\images\B_Cancel.png" />
+    <Content Include="Resources\images\B_Clear.png" />
+    <Content Include="Resources\images\B_Delete.png" />
+    <Content Include="Resources\images\B_Find.png" />
+    <Content Include="Resources\images\B_First.png" />
+    <Content Include="Resources\images\B_Go_to.png" />
+    <Content Include="Resources\images\B_Last.png" />
+    <Content Include="Resources\images\B_Nxt.png" />
+    <Content Include="Resources\images\B_Pre.png" />
+    <Content Include="Resources\images\B_Print.png" />
+    <Content Include="Resources\images\B_Save_Print.png" />
+    <Content Include="Resources\images\B_Search.png" />
+    <Content Include="Resources\images\B_Submit.png" />
+    <Content Include="Resources\images\B_Up.png" />
+    <Content Include="Resources\images\B_Update.png" />
+    <Content Include="Resources\images\B_Upload.png" />
+    <Content Include="Resources\images\B_Yes.png" />
+    <Content Include="Resources\images\ClosePurchaseOrder.png" />
+    <Content Include="Resources\images\Download_Customer_List.png" />
+    <Content Include="Resources\images\Insurance.png" />
+    <Content Include="Resources\images\komocogrouplogo.jpg" />
+    <Content Include="Resources\images\logo2.jpg" />
+    <Content Include="Resources\images\New_Shipment.png" />
+    <Content Include="Resources\images\OpenPurchOrder.png" />
+    <Content Include="Resources\images\Payment_History.png" />
+    <Content Include="Resources\images\PrintPassenPricList.png" />
+    <Content Include="Resources\images\ReinstateBooking.png" />
+    <Content Include="Resources\images\Search_Icon.png" />
+    <Content Include="Resources\images\Shipment_History.png" />
+    <Content Include="Resources\images\Step1.png" />
+    <Content Include="Resources\images\Step2.png" />
+    <Content Include="Resources\images\Step3.png" />
+    <Content Include="Resources\images\Step4.png" />
+    <Content Include="Resources\images\submitb.png" />
+    <Content Include="Resources\images\UpdatepriceList.png" />
+    <Content Include="Resources\images\Update_Shipment.png" />
+    <Content Include="Resources\js\bootstrap-material-datetimepicker.js" />
+    <Content Include="Resources\js\bootstrap.js" />
+    <Content Include="Resources\js\bootstrap.min.js" />
+    <Content Include="Resources\js\jquery1.10.2.js" />
+    <Content Include="Sales\Accessory.aspx" />
+    <Content Include="Sales\Booking.aspx" />
+    <Content Include="Sales\Booking_Management.aspx" />
+    <Content Include="Sales\Change_password.aspx" />
+    <Content Include="Sales\Colors_by_model.aspx" />
+    <Content Include="Sales\Control_Parameters.aspx" />
+    <Content Include="Sales\Credit_Memo.aspx" />
+    <Content Include="Sales\Customer_List.aspx" />
+    <Content Include="Sales\Customer_Search.aspx" />
+    <Content Include="Sales\Discount.aspx" />
+    <Content Include="Sales\Hire_purchase.aspx" />
+    <Content Include="Sales\Insurance.aspx" />
+    <Content Include="Sales\Interior_color.aspx" />
+    <Content Include="Sales\Loan_Status.aspx" />
+    <Content Include="Sales\Master_Colour.aspx" />
+    <Content Include="Sales\Model_Specification.aspx" />
+    <Content Include="Sales\Price_List.aspx" />
+    <Content Include="Sales\Reinstate_Booking.aspx" />
+    <Content Include="Sales\Shipment_master.aspx" />
+    <Content Include="Sales\Special_PriceList.aspx" />
+    <Content Include="Sales\TestDrive.aspx" />
+    <Content Include="Sales\VehicleStock.aspx" />
+    <Content Include="Sales\Vehicle_Selection.aspx" />
+    <Content Include="TableTemplates.css" />
+    <Content Include="tabs.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoPac\Account_Adjustment.aspx.cs">
+      <DependentUpon>Account_Adjustment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Account_Adjustment.aspx.designer.cs">
+      <DependentUpon>Account_Adjustment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Account_Code_Creation.aspx.cs">
+      <DependentUpon>Account_Code_Creation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Account_Code_Creation.aspx.designer.cs">
+      <DependentUpon>Account_Code_Creation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Admin_Users_Management.aspx.cs">
+      <DependentUpon>Admin_Users_Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Admin_Users_Management.aspx.designer.cs">
+      <DependentUpon>Admin_Users_Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Amend_Cheque_Purpose.aspx.cs">
+      <DependentUpon>Amend_Cheque_Purpose.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Amend_Cheque_Purpose.aspx.designer.cs">
+      <DependentUpon>Amend_Cheque_Purpose.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Car_Allocation.aspx.cs">
+      <DependentUpon>Car_Allocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Car_Allocation.aspx.designer.cs">
+      <DependentUpon>Car_Allocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Car_Registration.aspx.cs">
+      <DependentUpon>Car_Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Car_Registration.aspx.designer.cs">
+      <DependentUpon>Car_Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Cash_Deposit_Listing.aspx.cs">
+      <DependentUpon>Cash_Deposit_Listing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Cash_Deposit_Listing.aspx.designer.cs">
+      <DependentUpon>Cash_Deposit_Listing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Cheque_Deposit_Listing.aspx.cs">
+      <DependentUpon>Cheque_Deposit_Listing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Cheque_Deposit_Listing.aspx.designer.cs">
+      <DependentUpon>Cheque_Deposit_Listing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Cheque_Enquiry.aspx.cs">
+      <DependentUpon>Cheque_Enquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Cheque_Enquiry.aspx.designer.cs">
+      <DependentUpon>Cheque_Enquiry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Cheque_Issue.aspx.cs">
+      <DependentUpon>Cheque_Issue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Cheque_Issue.aspx.designer.cs">
+      <DependentUpon>Cheque_Issue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\COE_Allocation.aspx.cs">
+      <DependentUpon>COE_Allocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\COE_Allocation.aspx.designer.cs">
+      <DependentUpon>COE_Allocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\COE_Bidding_Preparation.aspx.cs">
+      <DependentUpon>COE_Bidding_Preparation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\COE_Bidding_Preparation.aspx.designer.cs">
+      <DependentUpon>COE_Bidding_Preparation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\COE_Bidding_Results.aspx.cs">
+      <DependentUpon>COE_Bidding_Results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\COE_Bidding_Results.aspx.designer.cs">
+      <DependentUpon>COE_Bidding_Results.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\COE_Bid_Staff.aspx.cs">
+      <DependentUpon>COE_Bid_Staff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\COE_Bid_Staff.aspx.designer.cs">
+      <DependentUpon>COE_Bid_Staff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\COE_Transfer.aspx.cs">
+      <DependentUpon>COE_Transfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\COE_Transfer.aspx.designer.cs">
+      <DependentUpon>COE_Transfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Contract_Management.aspx.cs">
+      <DependentUpon>Contract_Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Contract_Management.aspx.designer.cs">
+      <DependentUpon>Contract_Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Customer_Enquiry.aspx.cs">
+      <DependentUpon>Customer_Enquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Customer_Enquiry.aspx.designer.cs">
+      <DependentUpon>Customer_Enquiry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Duty_Pullout_List%28Taxi%29.aspx.cs">
+      <DependentUpon>Duty_Pullout_List%28Taxi%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Duty_Pullout_List%28Taxi%29.aspx.designer.cs">
+      <DependentUpon>Duty_Pullout_List%28Taxi%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Duty_Pullout_List.aspx.cs">
+      <DependentUpon>Duty_Pullout_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Duty_Pullout_List.aspx.designer.cs">
+      <DependentUpon>Duty_Pullout_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\ETA_Date_Updation.aspx.cs">
+      <DependentUpon>ETA_Date_Updation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\ETA_Date_Updation.aspx.designer.cs">
+      <DependentUpon>ETA_Date_Updation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Export_HMC.aspx.cs">
+      <DependentUpon>Export_HMC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Export_HMC.aspx.designer.cs">
+      <DependentUpon>Export_HMC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Export_To_HMC%28New%29.aspx.cs">
+      <DependentUpon>Export_To_HMC%28New%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Export_To_HMC%28New%29.aspx.designer.cs">
+      <DependentUpon>Export_To_HMC%28New%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Finance_Vehicle_Receipt.aspx.cs">
+      <DependentUpon>Finance_Vehicle_Receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Finance_Vehicle_Receipt.aspx.designer.cs">
+      <DependentUpon>Finance_Vehicle_Receipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\FOB_Invoice_Price.aspx.cs">
+      <DependentUpon>FOB_Invoice_Price.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\FOB_Invoice_Price.aspx.designer.cs">
+      <DependentUpon>FOB_Invoice_Price.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\General_Enquiry.aspx.cs">
+      <DependentUpon>General_Enquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\General_Enquiry.aspx.designer.cs">
+      <DependentUpon>General_Enquiry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\GIRO_Payment.aspx.cs">
+      <DependentUpon>GIRO_Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\GIRO_Payment.aspx.designer.cs">
+      <DependentUpon>GIRO_Payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\GST_Calculation.aspx.cs">
+      <DependentUpon>GST_Calculation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\GST_Calculation.aspx.designer.cs">
+      <DependentUpon>GST_Calculation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Hire_Purchase.aspx.cs">
+      <DependentUpon>Hire_Purchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Hire_Purchase.aspx.designer.cs">
+      <DependentUpon>Hire_Purchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Home_Page.aspx.cs">
+      <DependentUpon>Home_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Home_Page.aspx.designer.cs">
+      <DependentUpon>Home_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Invoice.aspx.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Invoice.aspx.designer.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Location_Master.aspx.cs">
+      <DependentUpon>Location_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Location_Master.aspx.designer.cs">
+      <DependentUpon>Location_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Monthly_Commission.aspx.cs">
+      <DependentUpon>Monthly_Commission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Monthly_Commission.aspx.designer.cs">
+      <DependentUpon>Monthly_Commission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\One_Motoring_COE_Bidding.aspx.cs">
+      <DependentUpon>One_Motoring_COE_Bidding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\One_Motoring_COE_Bidding.aspx.designer.cs">
+      <DependentUpon>One_Motoring_COE_Bidding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Open_Category_COE.aspx.cs">
+      <DependentUpon>Open_Category_COE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Open_Category_COE.aspx.designer.cs">
+      <DependentUpon>Open_Category_COE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\PARF_Transfer_Date.aspx.cs">
+      <DependentUpon>PARF_Transfer_Date.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\PARF_Transfer_Date.aspx.designer.cs">
+      <DependentUpon>PARF_Transfer_Date.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Payment_List.aspx.cs">
+      <DependentUpon>Payment_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Payment_List.aspx.designer.cs">
+      <DependentUpon>Payment_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Payment_Status.aspx.cs">
+      <DependentUpon>Payment_Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Payment_Status.aspx.designer.cs">
+      <DependentUpon>Payment_Status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Receipt.aspx.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Receipt.aspx.designer.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Salesman_Receipt.aspx.cs">
+      <DependentUpon>Salesman_Receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Salesman_Receipt.aspx.designer.cs">
+      <DependentUpon>Salesman_Receipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Service_Enquiry.aspx.cs">
+      <DependentUpon>Service_Enquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Service_Enquiry.aspx.designer.cs">
+      <DependentUpon>Service_Enquiry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Stock Hold.aspx.cs">
+      <DependentUpon>Stock Hold.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Stock Hold.aspx.designer.cs">
+      <DependentUpon>Stock Hold.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Taxi_Registration.aspx.cs">
+      <DependentUpon>Taxi_Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Taxi_Registration.aspx.designer.cs">
+      <DependentUpon>Taxi_Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\Update_Vehicle_Rate.aspx.cs">
+      <DependentUpon>Update_Vehicle_Rate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\Update_Vehicle_Rate.aspx.designer.cs">
+      <DependentUpon>Update_Vehicle_Rate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPac\User_Rights_Management.aspx.cs">
+      <DependentUpon>User_Rights_Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoPac\User_Rights_Management.aspx.designer.cs">
+      <DependentUpon>User_Rights_Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MainMaster.master.cs">
+      <DependentUpon>MainMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainMaster.master.designer.cs">
+      <DependentUpon>MainMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sales\Accessory.aspx.cs">
+      <DependentUpon>Accessory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Accessory.aspx.designer.cs">
+      <DependentUpon>Accessory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Booking.aspx.cs">
+      <DependentUpon>Booking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Booking.aspx.designer.cs">
+      <DependentUpon>Booking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Booking_Management.aspx.cs">
+      <DependentUpon>Booking_Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Booking_Management.aspx.designer.cs">
+      <DependentUpon>Booking_Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Change_password.aspx.cs">
+      <DependentUpon>Change_password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Change_password.aspx.designer.cs">
+      <DependentUpon>Change_password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Colors_by_model.aspx.cs">
+      <DependentUpon>Colors_by_model.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Colors_by_model.aspx.designer.cs">
+      <DependentUpon>Colors_by_model.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Control_Parameters.aspx.cs">
+      <DependentUpon>Control_Parameters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Control_Parameters.aspx.designer.cs">
+      <DependentUpon>Control_Parameters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Credit_Memo.aspx.cs">
+      <DependentUpon>Credit_Memo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Credit_Memo.aspx.designer.cs">
+      <DependentUpon>Credit_Memo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Customer_List.aspx.cs">
+      <DependentUpon>Customer_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Customer_List.aspx.designer.cs">
+      <DependentUpon>Customer_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Customer_Search.aspx.cs">
+      <DependentUpon>Customer_Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Customer_Search.aspx.designer.cs">
+      <DependentUpon>Customer_Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Discount.aspx.cs">
+      <DependentUpon>Discount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Discount.aspx.designer.cs">
+      <DependentUpon>Discount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Hire_purchase.aspx.cs">
+      <DependentUpon>Hire_purchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Hire_purchase.aspx.designer.cs">
+      <DependentUpon>Hire_purchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Insurance.aspx.cs">
+      <DependentUpon>Insurance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Insurance.aspx.designer.cs">
+      <DependentUpon>Insurance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Interior_color.aspx.cs">
+      <DependentUpon>Interior_color.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Interior_color.aspx.designer.cs">
+      <DependentUpon>Interior_color.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Loan_Status.aspx.cs">
+      <DependentUpon>Loan_Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Loan_Status.aspx.designer.cs">
+      <DependentUpon>Loan_Status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Master_Colour.aspx.cs">
+      <DependentUpon>Master_Colour.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Master_Colour.aspx.designer.cs">
+      <DependentUpon>Master_Colour.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Model_Specification.aspx.cs">
+      <DependentUpon>Model_Specification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Model_Specification.aspx.designer.cs">
+      <DependentUpon>Model_Specification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Price_List.aspx.cs">
+      <DependentUpon>Price_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Price_List.aspx.designer.cs">
+      <DependentUpon>Price_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Reinstate_Booking.aspx.cs">
+      <DependentUpon>Reinstate_Booking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Reinstate_Booking.aspx.designer.cs">
+      <DependentUpon>Reinstate_Booking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Shipment_master.aspx.cs">
+      <DependentUpon>Shipment_master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Shipment_master.aspx.designer.cs">
+      <DependentUpon>Shipment_master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Special_PriceList.aspx.cs">
+      <DependentUpon>Special_PriceList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Special_PriceList.aspx.designer.cs">
+      <DependentUpon>Special_PriceList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\TestDrive.aspx.cs">
+      <DependentUpon>TestDrive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\VehicleStock.aspx.cs">
+      <DependentUpon>VehicleStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Vehicle_Selection.aspx.cs">
+      <DependentUpon>Vehicle_Selection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>24812</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:24812/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
